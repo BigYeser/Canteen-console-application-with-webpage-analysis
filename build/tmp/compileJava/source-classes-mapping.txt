@@ -1,0 +1,46 @@
+de/uniwue/jpp/mensabot/sending/Sender.java
+ de.uniwue.jpp.mensabot.sending.Sender
+de/uniwue/jpp/mensabot/retrieval/htmlparsing/HtmlParsingUtil.java
+ de.uniwue.jpp.mensabot.retrieval.htmlparsing.HtmlParsingUtil
+de/uniwue/jpp/mensabot/sending/formatting/analyse/Analyzer.java
+ de.uniwue.jpp.mensabot.sending.formatting.analyse.Analyzer
+de/uniwue/jpp/mensabot/retrieval/htmlparsing/HtmlParsingException.java
+ de.uniwue.jpp.mensabot.retrieval.htmlparsing.HtmlParsingException
+de/uniwue/jpp/errorhandling/OptionalWithMessage.java
+ de.uniwue.jpp.errorhandling.OptionalWithMessage
+de/uniwue/jpp/mensabot/sending/formatting/Formatter.java
+ de.uniwue.jpp.mensabot.sending.formatting.Formatter
+de/uniwue/jpp/mensabot/gui/GuiLauncher.java
+ de.uniwue.jpp.mensabot.gui.GuiLauncher
+de/uniwue/jpp/mensabot/gui/MensabotGui.java
+ de.uniwue.jpp.mensabot.gui.MensabotGui
+de/uniwue/jpp/mensabot/sending/Importer.java
+ de.uniwue.jpp.mensabot.sending.Importer
+de/uniwue/jpp/mensabot/retrieval/Parser.java
+ de.uniwue.jpp.mensabot.retrieval.Parser
+de/uniwue/jpp/mensabot/util/JsonUtil.java
+ de.uniwue.jpp.mensabot.util.JsonUtil
+de/uniwue/jpp/errorhandling/OptionalWithMessageVal.java
+ de.uniwue.jpp.errorhandling.OptionalWithMessageVal
+de/uniwue/jpp/mensabot/retrieval/htmlparsing/HtmlNode.java
+ de.uniwue.jpp.mensabot.retrieval.htmlparsing.HtmlNode
+de/uniwue/jpp/errorhandling/OptionalWithMessageMsg.java
+ de.uniwue.jpp.errorhandling.OptionalWithMessageMsg
+de/uniwue/jpp/mensabot/retrieval/Saver.java
+ de.uniwue.jpp.mensabot.retrieval.Saver
+de/uniwue/jpp/mensabot/dataclasses/Meal.java
+ de.uniwue.jpp.mensabot.dataclasses.Meal
+de/uniwue/jpp/mensabot/dataclasses/MyMeal.java
+ de.uniwue.jpp.mensabot.dataclasses.MyMeal
+de/uniwue/jpp/mensabot/dataclasses/Menu.java
+ de.uniwue.jpp.mensabot.dataclasses.Menu
+de/uniwue/jpp/mensabot/dataclasses/MyMenu.java
+ de.uniwue.jpp.mensabot.dataclasses.MyMenu
+de/uniwue/jpp/mensabot/Controller.java
+ de.uniwue.jpp.mensabot.Controller
+de/uniwue/jpp/mensabot/dataclasses/testClass.java
+ de.uniwue.jpp.mensabot.dataclasses.testClass
+de/uniwue/jpp/mensabot/retrieval/MyFetcher.java
+ de.uniwue.jpp.mensabot.retrieval.MyFetcher
+de/uniwue/jpp/mensabot/retrieval/Fetcher.java
+ de.uniwue.jpp.mensabot.retrieval.Fetcher

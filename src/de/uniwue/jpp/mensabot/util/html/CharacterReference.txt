@@ -1,0 +1,56 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package de.uniwue.jpp.mensabot.util.html;
+
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+public class CharacterReference {
+    private List<Integer> codepoints;
+    private String characters;
+
+    public CharacterReference() {
+    }
+
+    public List<Integer> getCodepoints() {
+        return this.codepoints;
+    }
+
+    public String getCharacters() {
+        return this.characters;
+    }
+
+    public void setCharacters(String characters) {
+        this.characters = characters;
+    }
+
+    public void setCodepoints(List<Integer> codepoints) {
+        this.codepoints = codepoints;
+    }
+
+    public static Map<String, CharacterReference> loadCharacterReferences() {
+        URL file = CharacterReference.class.getResource("/entities.json");
+        return (Map)urlToHashMapObject(file, String.class, CharacterReference.class).orElseThrow(() -> {
+            return new IllegalStateException("Could not parse entities.json. Ensure, that no changes were made to this file!");
+        });
+    }
+
+    private static <T, U> Optional<Map<T, U>> urlToHashMapObject(URL file, Class<T> keyType, Class<U> valueType) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            JavaType type = mapper.getTypeFactory().constructMapType(HashMap.class, keyType, valueType);
+            return Optional.of((Map)mapper.readValue(file, type));
+        } catch (IOException var5) {
+            return Optional.empty();
+        }
+    }
+}
