@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniwue.jpp.mensabot.gui.mainController">
+    <TabPane layoutX="10" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="0.0">
+        <Tab fx:id="pipelining" text="Pipelining">
+            <BorderPane layoutX="165.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0">
+            <left>
+               <GridPane prefHeight="571.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                 <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="538.0" minWidth="10.0" prefWidth="200.0" />
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="892.0" minWidth="0.0" prefWidth="827.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                     <RowConstraints maxHeight="229.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                     <RowConstraints maxHeight="553.0" minHeight="10.0" prefHeight="543.0" vgrow="SOMETIMES" />
+                 </rowConstraints>
+                  <children>
+                     <ListView fx:id="listMethodeFormatter" prefHeight="407.0" prefWidth="200.0" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                           <Insets bottom="10.0" left="10.0" right="10.0" />
+                        </GridPane.margin></ListView>
+                     <Label prefHeight="29.0" prefWidth="165.0" text="Formatters:">
+                        <font>
+                           <Font name="System Bold" size="14.0" />
+                        </font>
+                        <padding>
+                           <Insets left="15.0" />
+                        </padding>
+                     </Label>
+                     <Label prefHeight="36.0" prefWidth="443.0" text="Fetch, Parse, Format and Send Mensa Data" GridPane.columnIndex="1">
+                        <font>
+                           <Font name="System Bold" size="14.0" />
+                        </font>
+                     </Label>
+                     <AnchorPane prefHeight="543.0" prefWidth="600.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <children>
+                           <Button id="fetch" fx:id="fetch" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#fetchData" text="Fetch &amp; Save" />
+                           <Button layoutX="110.0" layoutY="14.0" mnemonicParsing="false" onAction="#formatData" text="Format" />
+                           <Button fx:id="sendData" layoutX="176.0" layoutY="14.0" mnemonicParsing="false" onAction="#sendData" text="Send" />
+                           <Label fx:id="menuLabel" layoutX="14.0" layoutY="47.0" prefHeight="27.0" prefWidth="817.0" text="">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                              <opaqueInsets>
+                                 <Insets />
+                              </opaqueInsets></Label>
+                           <Label fx:id="menuItems" alignment="TOP_LEFT" cache="true" layoutX="14.0" layoutY="74.0" pickOnBounds="false" prefHeight="122.0" prefWidth="817.0" text="">
+                              <opaqueInsets>
+                                 <Insets />
+                              </opaqueInsets>
+                           </Label>
+                           <Label fx:id="analysisLabel" layoutX="14.0" layoutY="196.0" prefHeight="26.0" prefWidth="817.0" text="">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="analysisResult" alignment="TOP_LEFT" layoutX="14.0" layoutY="222.0" prefHeight="180.0" prefWidth="817.0" />
+                        </children>
+                     </AnchorPane>
+                  </children>
+               </GridPane>
+            </left></BorderPane>
+        </Tab>
+        <Tab fx:id="formatter" text="Formatter Creation">
+            <GridPane layoutX="0" layoutY="29.0" prefHeight="571.0" prefWidth="952.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.0" minWidth="10.0" prefWidth="200.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="706.0" minWidth="10.0" prefWidth="464.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="311.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <ListView fx:id="listMethodeFormatterCantSelect" disable="true" prefHeight="407.0" prefWidth="200.0" GridPane.rowIndex="0">
+                        <GridPane.margin>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+                        </GridPane.margin>
+                    </ListView>
+               <VBox prefHeight="571.0" prefWidth="489.0" GridPane.columnIndex="1">
+                  <children>
+                     <AnchorPane prefHeight="571.0" prefWidth="554.0">
+                        <children>
+                           <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="320.0" text="Create new Formatter from format">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                           <TextArea fx:id="formatterFromFormat" layoutX="14.0" layoutY="34.0" prefHeight="148.0" prefWidth="440.0" promptText="Enter the format with $ here" />
+                           <Label layoutX="15.0" layoutY="239.0" text="Analyzers available">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                           <ListView fx:id="listOfAnalyzersAvailable" layoutX="21.0" layoutY="265.0" prefHeight="110.0" prefWidth="199.0" />
+                           <Label layoutX="247.0" layoutY="239.0" text="Selected Analyzers">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                           <ListView fx:id="listOfSelectedAnalyzers" layoutX="253.0" layoutY="265.0" prefHeight="110.0" prefWidth="199.0" />
+                           <Button layoutX="21.0" layoutY="385.0" mnemonicParsing="false" onAction="#selectAnalyzer" prefHeight="25.0" prefWidth="124.0" text="Select Anaylzer" />
+                           <Button layoutX="255.0" layoutY="385.0" mnemonicParsing="false" onAction="#unselectAnalyzer" prefHeight="25.0" prefWidth="108.0" text="Unselect Anlyzer" />
+                           <Button fx:id="createNewFormatter" layoutX="21.0" layoutY="450.0" mnemonicParsing="false" onAction="#createNewFormatter" prefHeight="25.0" prefWidth="134.0" text="Create New Formatter" />
+                           <TextField fx:id="nameFormatterFromFormat" layoutX="14.0" layoutY="195.0" prefHeight="25.0" prefWidth="442.0" promptText="Enter name here" />
+                           <Label fx:id="errLabel" layoutX="174.0" layoutY="454.0" textFill="RED">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </AnchorPane>
+                  </children>
+               </VBox>
+               <AnchorPane prefHeight="571.0" prefWidth="347.0" GridPane.columnIndex="2">
+                  <children>
+                     <TextField fx:id="headLineFormatter" layoutX="19.0" layoutY="34.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter the headline here" />
+                     <Label layoutX="14.0" layoutY="14.0" text="Create new Formatter with headline from Analyzer">
+                        <font>
+                           <Font name="System Bold" size="13.0" />
+                        </font>
+                     </Label>
+                     <ListView fx:id="listOfAnalyzers" layoutX="19.0" layoutY="71.0" prefHeight="278.0" prefWidth="268.0" />
+                     <TextField fx:id="nameHeadLineFormatter" layoutX="19.0" layoutY="361.0" prefHeight="25.0" prefWidth="270.0" promptText="Enter name here" />
+                     <Button fx:id="createNewHeadlineFormatter" layoutX="19.0" layoutY="404.0" mnemonicParsing="false" onAction="#createNewHeadlineFormatter" prefHeight="25.0" prefWidth="134.0" text="Create new Formatter" />
+                  </children>
+               </AnchorPane>
+                </children>
+            </GridPane>
+        </Tab>
+        <Tab fx:id="diagrams" text="Diagrams">
+            <GridPane layoutX="0" layoutY="29.0" prefHeight="571.0" prefWidth="952.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="952.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="146.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="310.0" minHeight="10.0" prefHeight="214.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="255.0" minHeight="10.0" prefHeight="210.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <AnchorPane prefHeight="185.0" prefWidth="973.0">
+                  <children>
+                     <LineChart fx:id="lineChart" layoutY="10.0" prefHeight="150.0" prefWidth="973.0" title="Base Stats">
+                       <xAxis>
+                         <CategoryAxis side="BOTTOM" fx:id="xLineChart" />
+                       </xAxis>
+                       <yAxis>
+                         <NumberAxis fx:id="yLineChart" side="LEFT" />
+                       </yAxis>
+                     </LineChart>
+                  </children>
+               </AnchorPane>
+               <AnchorPane prefHeight="183.0" prefWidth="973.0" GridPane.rowIndex="1">
+                  <children>
+                     <PieChart fx:id="pieChart" layoutX="317.0" layoutY="-5.0" prefHeight="218.0" prefWidth="339.0" title="Prize range Pie" />
+                  </children>
+               </AnchorPane>
+               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                  <children>
+                     <BarChart fx:id="barChart" prefHeight="175.0" prefWidth="973.0" title="Amount of Dishes per weekdays">
+                       <xAxis>
+                         <CategoryAxis side="BOTTOM" />
+                       </xAxis>
+                       <yAxis>
+                         <NumberAxis side="LEFT" />
+                       </yAxis>
+                     </BarChart>
+                  </children>
+               </AnchorPane>
+            </children>
+            </GridPane>
+        </Tab>
+        <Tab fx:id="stats" text="Stats">
+            <ScrollPane>
+                <AnchorPane prefHeight="600.0" prefWidth="1000.0">
+                    <TableView fx:id="tableStats" layoutX="14.0" layoutY="7.0" prefHeight="562.0" prefWidth="954.0">
+                      <columns>
+                        <TableColumn fx:id="nameStats" prefWidth="160.0" text="Name" />
+                        <TableColumn fx:id="singleMenuStats" prefWidth="500.0" text="Single Menu" />
+                          <TableColumn fx:id="allMenuStats" prefWidth="500.0" text=" All Menus" />
+                      </columns>
+                    </TableView>
+                </AnchorPane>
+            </ScrollPane>
+
+        </Tab>
+        <Tab fx:id="log" onSelectionChanged="#updateLogViewerTable" text="LogViewer">
+            <ScrollPane>
+                <AnchorPane prefHeight="600.0" prefWidth="1000.0">
+                    <TableView fx:id="tableLogViewer" layoutX="192.0" layoutY="13.0" onSort="#updateLogViewerTable" prefHeight="528.0" prefWidth="754.0">
+                        <columns>
+                            <TableColumn fx:id="date" prefWidth="160.0" text="Date" />
+
+                        </columns>
+                    </TableView>
+                <TextField fx:id="searchKey" layoutX="23.0" layoutY="41.0" promptText="Enter seach key here" />
+                <Label layoutX="23.0" layoutY="14.0" text="Search">
+                   <font>
+                      <Font name="System Bold" size="14.0" />
+                   </font>
+                </Label>
+                <Button fx:id="search" layoutX="23.0" layoutY="83.0" mnemonicParsing="false" onAction="#search" text="Search" />
+                <Label fx:id="nextResult" layoutX="75.0" layoutY="155.0" />
+               <Button fx:id="nextRow" layoutX="98.0" layoutY="83.0" mnemonicParsing="false" onAction="#next" text="next" visible="false" />
+               <Label fx:id="resultSearch" layoutX="23.0" layoutY="118.0" prefHeight="17.0" prefWidth="159.0" text="Label" visible="false">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+                </AnchorPane>
+            </ScrollPane>
+        </Tab>
+    </TabPane>
+</AnchorPane>
